@@ -30,27 +30,30 @@ class ProdutoDAO
 
     public function insert($produto)
     {
+        $ext = strtolower(substr($produto->prdImage['name'], -4));
+        $new_name =  md5(time()) . $ext;
+        $dir = $_SERVER['DOCUMENT_ROOT'] . '/my-app/view/img/produtos/';
+        move_uploaded_file($produto->prdImage['tmp_name'], $dir . $new_name);
 
-        $extensao = strtolower(substr($produto->prdImageName['name'], -4));
-        $novo_nome =  md5(time()) . $extensao;
-        $diretorio = "/my-app/view/image/produtos/file";
-
-        //move_uploaded_file($_FILES['imagem']['tmp_name'], $diretorio . $novo_nome);
         $sql = "INSERT INTO Produtos (prdDesNome, prdMnyValor, prdEspDesc, prdImageName, prdDtaCadastro) VALUES (?, ?, ?, ?, SYSDATE())";
         $stmt = $this->db->mysqli->prepare($sql);
-        $stmt->bind_param('sdss', $produto->prdDesNome, $produto->prdMnyValor, $produto->prdEspDesc, $produto->prdImageName);
+        $stmt->bind_param('sdss', $produto->prdDesNome, $produto->prdMnyValor, $produto->prdEspDesc, $new_name);
         $stmt->execute();
         return $stmt->insert_id;
     }
 
     public function update($produto)
     {
+        $ext = strtolower(substr($produto->prdImage['name'], -4));
+        $new_name =  md5(time()) . $ext;
+        $dir = $_SERVER['DOCUMENT_ROOT'] . '/my-app/view/img/produtos/';
+        move_uploaded_file($produto->prdImage['tmp_name'], $dir . $new_name);
 
         $sql = "UPDATE Produtos SET prdDesNome= ?, prdMnyValor= ?, 
                                     prdEspDesc= ?, prdImageName= ?, 
                                     prdDtaCadastro= SYSDATE() WHERE prdCod= $produto->prdCod";
         $stmt = $this->db->mysqli->prepare($sql);
-        $stmt->bind_param('sdss', $produto->prdDesNome, $produto->prdMnyValor, $produto->prdEspDesc, $produto->prdImageName);
+        $stmt->bind_param('sdss', $produto->prdDesNome, $produto->prdMnyValor, $produto->prdEspDesc, $new_name);
         if ($stmt->execute()) {
             return 1;
         } else {

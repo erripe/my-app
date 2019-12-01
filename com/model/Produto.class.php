@@ -8,6 +8,7 @@ class Produto
     public $prdDesNome;
     public $prdMnyValor;
     public $prdEspDesc;
+    public $prdImage;
     public $prdImageName;
     public $prdDtaCadastro;
 

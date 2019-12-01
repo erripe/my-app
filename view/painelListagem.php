@@ -30,7 +30,6 @@ session_start();
   <div class="container-fluid">
     <div class="row">
       <?php include_once "painelLateral.php"; ?>
-
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
           <h1 class="h2">Cadastro de Produtos</h1>
@@ -61,12 +60,22 @@ session_start();
                       echo '<td>' . $value->prdMnyValor . '</td>';
                       echo '<td>' . $value->prdEspDesc . '</td>';
                       echo '<td class="middle">
-                      <button id="btnImg" value="' . $value->prdCod . '" data-toggle="modal" data-target="#myModal" type="button" class="btn btn-img btn-primary"><i class="far fa-eye"></i></button> 
+                      <button id="btnImg" value="' . $value->prdCod . '" data-toggle="modal" data-target="#myModal' . $value->prdCod . '" type="button" class="btn btn-img btn-primary"><i class="far fa-eye"></i></button> 
                       <!--<button id="btnEdit" value="' . $value->prdCod . '"type="button" class="btn btn-edit btn-success"><i class="fas fa-edit"></i></button>-->
                       <a href="/my-app/view/PainelEdicao.php?prdCod=' . $value->prdCod . '" id="btnEdit"  class="btn btn-edit btn-success"><i class="fas fa-edit"></i></a>
                       <button id="btnDelete" value="' . $value->prdCod . '" type="button" class="btn btn-delete btn-danger"><i class="far fa-trash-alt"></i></button>
                       </td>
                       </tr>';
+                      echo
+                        '<div id="myModal' . $value->prdCod . '" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-body">    
+                            <img src="/my-app/view/img/produtos/' . $value->prdImageName . '" style="width:100%;"/>      
+                          </div>
+                        </div>
+                      </div>
+                    </div>';
                     }
                   }
                   ?>
@@ -76,20 +85,6 @@ session_start();
           </div>
         </div>
       </main>
-    </div>
-  </div>
-
-  <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-body">
-          <?php
-          //$imagem = $_POST['imgStr'];
-          //echo $imagem;
-          //echo '<img np-src="data:image/jpeg;base64,' . $imagem . '"/>';
-          ?>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -123,31 +118,11 @@ session_start();
             alert('ERRO!');
           }
         });
-      }),
-      $(".btn-img").click(function() {
-        var id = $(this).val();
-        $.ajax({
-          url: "/my-app/com/controller/PainelController.class.php",
-          type: "POST",
-          dataType: "json",
-          data: {
-            action: 'image',
-            prdCod: id
-          },
-          success: function(response) {
-            $.post('/my-app/view/painelListagem.php', {
-              imgStr: response.imgStr
-            });
-          },
-          error: function(response) {
-            $.post('/my-app/view/painelListagem.php', {
-              imgStr: response.imgStr
-            });
-          }
-        });
       })
     );
   </script>
+
+
 
 </body>
 

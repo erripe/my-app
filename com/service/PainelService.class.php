@@ -33,11 +33,4 @@ class PainelService
         $produto = new Produto();
         return $produto->delete($prdCod);
     }
-
-    public function getImage($prdCod)
-    {
-        $produto = new Produto();
-        $imagePrd = $produto->findById($prdCod);
-        return $imagePrd->prdEspImg;
-    }
 }

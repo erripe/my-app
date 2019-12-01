@@ -44,7 +44,7 @@ if (isset($_GET['prdCod'])) {
         <div class="container_new">
           <div class="row">
             <div class="col-md-8 order-md-1">
-              <form name="form" method="POST" action="" class="needs-validation" novalidate>
+              <form name="form" method="POST" action="" class="needs-validation" enctype="multipart/form-data" novalidate>
                 <input type="hidden" id="prdCod" name="prdCod" value="<?php echo $produto->prdCod; ?>">
                 <!-- form multi plataform para submeter imagem -->
                 <div class="row">
@@ -60,19 +60,16 @@ if (isset($_GET['prdCod'])) {
                 <div class="mb-3">
                   <label for="prdImageName">Imagem</label>
                   <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="prdImageName">Upload</span>
-                    </div>
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="prdImageName" aria-describedby="prdImageName">
-                      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                      <input type="file" accept="image/*" class="custom-file-input" id="prdImage" name="prdImage">
+                      <label class="custom-file-label" id="" name="" for="customFile">Choose file</label>
                     </div>
                   </div>
                 </div>
 
                 <div class="mb-3">
                   <label for="prdEspDesc">Descrição</label>
-                  <input type="text" class="form-control" id="prdEspDesc" placeholder="" value="<?php echo $produto->prdEspDesc; ?>">
+                  <input type="text" class="form-control" id="prdEspDesc" placeholder="" value="<?php echo $produto->prdEspDesc; ?>" required>
                   <div class="invalid-feedback">
                     Descrição do produto inválido.
                   </div>
@@ -90,8 +87,6 @@ if (isset($_GET['prdCod'])) {
 
                 <hr class="mb-4">
                 <input class="btn btn-success btn-lg btn-block" id="submit" type="button" value="Salvar">
-                <!-- <button class="btn btn-save btn-success btn-lg btn-block" type="button">Salvar</button> -->
-                <button class="btn btn-clean btn-danger btn-lg btn-block" type="button">Excluir</button>
               </form>
             </div>
           </div>
@@ -113,23 +108,23 @@ if (isset($_GET['prdCod'])) {
         var prdDesNome = document.getElementById("prdDesNome").value;
         var prdMnyValor = document.getElementById("prdMnyValor").value;
         var prdEspDesc = document.getElementById("prdEspDesc").value;
-        //var prdImageName = document.getElementById("prdImageName").value;
-        //var prdImage = document.getElementById("prdImage").value;
-        // Returns successful data submission message when the entered information is stored in database.
-        var dataString = 'prdCod=' + prdCod + '&prdDesNome=' + prdDesNome + '&prdMnyValor=' + prdMnyValor + '&prdEspDesc=' + prdEspDesc;
+        var file_data = $('#prdImage').prop('files')[0];
+        var form_data = new FormData();
+        form_data.append('action', 'update');
+        form_data.append('prdCod', prdCod);
+        form_data.append('prdDesNome', prdDesNome);
+        form_data.append('prdMnyValor', prdMnyValor);
+        form_data.append('prdEspDesc', prdEspDesc);
+        form_data.append('prdImage', file_data);
 
-        // AJAX code to submit form.
         $.ajax({
           type: "POST",
           url: "/my-app/com/controller/PainelController.class.php",
-          data: {
-            action: 'update',
-            prdCod: prdCod,
-            prdDesNome: prdDesNome,
-            prdMnyValor: prdMnyValor,
-            prdEspDesc: prdEspDesc
-          },
+          dataType: 'text',
+          data: form_data,
           cache: false,
+          contentType: false,
+          processData: false,
           success: function(response) {
             if (response.return !== "") {
               alert("Operação realizada com sucesso.");
@@ -144,6 +139,11 @@ if (isset($_GET['prdCod'])) {
           }
         });
       }));
+    // Add the following code if you want the name of the file appear on select
+    $(".custom-file-input").on("change", function() {
+      var fileName = $(this).val().split("\\").pop();
+      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
   </script>
 
 </body>

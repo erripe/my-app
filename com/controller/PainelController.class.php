@@ -19,6 +19,9 @@ if (isset($_POST['action'])) {
             if (isset($_POST['prdEspDesc'])) {
                 $produto->prdEspDesc = $_POST['prdEspDesc'];
             }
+            if (isset($_FILES['prdImage'])) {
+                $produto->prdImage = $_FILES['prdImage'];
+            }
             if ($produto->prdCod != '') {
                 echo json_encode(array("return" => $controller->update($produto)));
             } else {
@@ -28,9 +31,6 @@ if (isset($_POST['action'])) {
             break;
         case 'delete':
             echo json_encode(array("return" => $controller->delete($_POST['prdCod'])));
-            break;
-        case 'image':
-            echo json_encode(array("imgStr" => $controller->getImage($_POST['prdCod'])));
             break;
     }
 }
@@ -69,11 +69,5 @@ class PainelController
     {
         $service = new PainelService();
         return $service->delete($prdCod);
-    }
-
-    public function getImage($prdCod)
-    {
-        $service = new PainelService();
-        return $service->getImage($prdCod);
     }
 }
