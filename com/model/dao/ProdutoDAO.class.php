@@ -21,6 +21,7 @@ class ProdutoDAO
     {
         $sql = "SELECT * FROM Produtos";
         $result = $this->db->mysqli->query($sql);
+        $rows = [];
         while ($entry = $result->fetch_object()) {
             $rows[] = $entry;
         }
@@ -29,20 +30,27 @@ class ProdutoDAO
 
     public function insert($produto)
     {
-        $sql = "INSERT INTO Produtos (prdDesNome, prdMnyValor, prdEspDesc, prdEspImg, prdDtaCadastro) VALUES (?, ?, ?, ?, SYSDATE())";
+
+        $extensao = strtolower(substr($produto->prdImageName['name'], -4));
+        $novo_nome =  md5(time()) . $extensao;
+        $diretorio = "/my-app/view/image/produtos/file";
+
+        //move_uploaded_file($_FILES['imagem']['tmp_name'], $diretorio . $novo_nome);
+        $sql = "INSERT INTO Produtos (prdDesNome, prdMnyValor, prdEspDesc, prdImageName, prdDtaCadastro) VALUES (?, ?, ?, ?, SYSDATE())";
         $stmt = $this->db->mysqli->prepare($sql);
-        $stmt->bind_param('sdss', $produto->prdDesNome, $produto->prdMnyValor, $produto->prdEspDesc, $produto->prdEspImg);
+        $stmt->bind_param('sdss', $produto->prdDesNome, $produto->prdMnyValor, $produto->prdEspDesc, $produto->prdImageName);
         $stmt->execute();
         return $stmt->insert_id;
     }
 
     public function update($produto)
     {
+
         $sql = "UPDATE Produtos SET prdDesNome= ?, prdMnyValor= ?, 
-                                    prdEspDesc= ?, prdEspImg= ?, 
+                                    prdEspDesc= ?, prdImageName= ?, 
                                     prdDtaCadastro= SYSDATE() WHERE prdCod= $produto->prdCod";
         $stmt = $this->db->mysqli->prepare($sql);
-        $stmt->bind_param('sdss', $produto->prdDesNome, $produto->prdMnyValor, $produto->prdEspDesc, $produto->prdEspImg);
+        $stmt->bind_param('sdss', $produto->prdDesNome, $produto->prdMnyValor, $produto->prdEspDesc, $produto->prdImageName);
         if ($stmt->execute()) {
             return 1;
         } else {

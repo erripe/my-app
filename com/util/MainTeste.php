@@ -25,7 +25,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/model/Produto.class.php';
 // echo "<br>";
 
 $url = 'https://decathlonpro.vteximg.com.br/arquivos/ids/2088859-1000-1000/-w-100-m-black-1.jpg';
-$image = utf8_decode(file_get_contents($url));
+$image = base64_encode(file_get_contents($url));
 //echo $image;
 $produto = new Produto();
 $produto->prdDesNome = 'Relógio';
@@ -36,13 +36,13 @@ $produto->prdMnyValor = 50.00;
 
 // //print_r($produto->list()->count);
 // echo "<br>";
-//echo $produto->insert();
+echo $produto->insert();
 // echo "<br>";
 // $produto->prdDesNome = 'Test CRUDDDDDDD';
 // echo $produto->update();
 // echo "<br>";
 // //print_r($produto->list()->count);
 // //echo "<br>";
-echo $produto->findById(81)->prdEspImg;
+echo $produto->findById($produto->prdCod)->prdEspImg;
 // echo "<br>";
 //echo $produto->delete(23);

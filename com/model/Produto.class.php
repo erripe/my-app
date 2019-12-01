@@ -8,7 +8,7 @@ class Produto
     public $prdDesNome;
     public $prdMnyValor;
     public $prdEspDesc;
-    public $prdEspImg;
+    public $prdImageName;
     public $prdDtaCadastro;
 
     public function __construct()

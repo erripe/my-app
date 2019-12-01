@@ -42,29 +42,32 @@ session_start();
               <table class="table table-bordered">
                 <thead>
                   <tr>
-                    <th scope="col">Código</th>
-                    <th scope="col">Título</th>
-                    <th scope="col">Valor</th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">Ações</th>
+                    <th style="width: 10%" scope="col">Código</th>
+                    <th style="width: 20%" scope="col">Título</th>
+                    <th style="width: 10%" scope="col">Valor</th>
+                    <th style="width: 45%" scope="col">Descrição</th>
+                    <th style="width: 15%" scope="col">Ações</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php
                   $controller = new PainelController();
                   $list = $controller->listagem();
-                  foreach ($list as $value) {
-                    echo '<tr>';
-                    echo '<th scope="row">' . $value->prdCod . '</th>';
-                    echo '<td>' . $value->prdDesNome . '</td>';
-                    echo '<td>' . $value->prdMnyValor . '</td>';
-                    echo '<td>' . $value->prdEspDesc . '</td>';
-                    echo '<td>
-                    <button id="btnImg" value="' . $value->prdCod . '" data-toggle="modal" data-target="#myModal" type="button" class="btn btn-img btn-primary"><i class="far fa-eye"></i></button> 
-                    <button id="' . $value->prdCod . '" type="button" class="btn btn-edit btn-success"><i class="fas fa-edit"></i></button>
-                    <button id="btnDelete" value="' . $value->prdCod . '" type="button" class="btn btn-delete btn-danger"><i class="far fa-trash-alt"></i></button>
-                    </td>
-                    </tr>';
+                  if (count($list) > 0) {
+                    foreach ($list as $value) {
+                      echo '<tr>';
+                      echo '<th scope="row">' . $value->prdCod . '</th>';
+                      echo '<td>' . $value->prdDesNome . '</td>';
+                      echo '<td>' . $value->prdMnyValor . '</td>';
+                      echo '<td>' . $value->prdEspDesc . '</td>';
+                      echo '<td class="middle">
+                      <button id="btnImg" value="' . $value->prdCod . '" data-toggle="modal" data-target="#myModal" type="button" class="btn btn-img btn-primary"><i class="far fa-eye"></i></button> 
+                      <!--<button id="btnEdit" value="' . $value->prdCod . '"type="button" class="btn btn-edit btn-success"><i class="fas fa-edit"></i></button>-->
+                      <a href="/my-app/view/PainelEdicao.php?prdCod=' . $value->prdCod . '" id="btnEdit"  class="btn btn-edit btn-success"><i class="fas fa-edit"></i></a>
+                      <button id="btnDelete" value="' . $value->prdCod . '" type="button" class="btn btn-delete btn-danger"><i class="far fa-trash-alt"></i></button>
+                      </td>
+                      </tr>';
+                    }
                   }
                   ?>
                 </tbody>
@@ -81,7 +84,9 @@ session_start();
       <div class="modal-content">
         <div class="modal-body">
           <?php
-          echo '<img src="data:image/jpeg;base64,' . $_COOKIE['imgStr'] . '" class="img-responsive" style="width: 100%;">';
+          //$imagem = $_POST['imgStr'];
+          //echo $imagem;
+          //echo '<img np-src="data:image/jpeg;base64,' . $imagem . '"/>';
           ?>
         </div>
       </div>
@@ -124,16 +129,20 @@ session_start();
         $.ajax({
           url: "/my-app/com/controller/PainelController.class.php",
           type: "POST",
-          dataType: "image/jpeg",
+          dataType: "json",
           data: {
             action: 'image',
             prdCod: id
           },
           success: function(response) {
-            document.cookie = "imgStr=" + response.imgStr;
+            $.post('/my-app/view/painelListagem.php', {
+              imgStr: response.imgStr
+            });
           },
           error: function(response) {
-            document.cookie = "imgStr=" + response.imgStr;
+            $.post('/my-app/view/painelListagem.php', {
+              imgStr: response.imgStr
+            });
           }
         });
       })
