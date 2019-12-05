@@ -1,7 +1,5 @@
 <?php
-if (!class_exists('Database')) {
-    require 'Database.class.php';
-}
+include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/util/Database.class.php';
 
 class PessoaDAO
 {

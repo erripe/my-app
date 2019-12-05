@@ -1,6 +1,11 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/PainelController.class.php';
 session_start();
+
+if (!isset($_SESSION["login"])) {
+  header("Location: /my-app/view/login.php");
+}
+
 ?>
 <!DOCTYPE html>
 <!-- saved from url=(0052)https://getbootstrap.com/docs/4.3/examples/product/# -->
@@ -89,6 +94,7 @@ session_start();
   </div>
 
   <script src="/my-app/view/js/jquery-3.4.1.min.js"></script>
+  <script src="/my-app/view/js/notify.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>

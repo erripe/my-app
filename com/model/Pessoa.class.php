@@ -1,7 +1,5 @@
 <?php
-if (!class_exists('dao/PessoaDAO')) {
-    require 'dao/PessoaDAO.class.php';
-}
+include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/model/dao/PessoaDAO.class.php';
 
 class Pessoa
 {

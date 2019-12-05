@@ -1,3 +1,8 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/PainelController.class.php';
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +26,7 @@
 
 <body>
     <!-- NavBar -->
-    <?php include_once ("navbar.php"); ?>
+    <?php include_once("navbar.php"); ?>
 
     <!-- Marketing messaging and featurettes
         ================================================== -->
@@ -36,274 +41,48 @@
 
         <div class="album py-5">
             <div class="container">
-
                 <div class="row">
-                    <div class="col-md-4">
-                        <!--Card-->
-                        <div class="card mb-4 shadow-sm">
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="https://d2d7stu5fcdz3l.cloudfront.net/Custom/Content/Products/11/18/1118746_relogio-technos-elegance-crystal-2035mle4a-joias-vip_m1_637069353775570172" class="card-img-top" alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-                            <!--Card content-->
-                            <div class="card-body text-center">
-                                <!--Title-->
-                                <h5>
-                                    <strong>
-                                        <a href="" data-toggle="modal" data-target="#modalQuickView" class="dark-grey-text">Relógio Feminino Technos Elegance 2035MLE/4A
-                                            <span class="badge badge-pill danger-color">NEW</span>
-                                        </a>
-                                    </strong>
-                                </h5>
 
-                                <h4 class="font-weight-bold blue-text">
-                                    <strong>R$ 674,10</strong>
-                                </h4>
-                            </div>
-                            <!--Card content-->
-                        </div>
-                        <!--/Card-->
-                    </div>
-                    <div class="col-md-4">
-                        <!--Card-->
-                        <div class="card mb-4 shadow-sm">
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="https://d2d7stu5fcdz3l.cloudfront.net/Custom/Content/Products/11/18/1118726_relogio-technomarine-joias-vip_m1_637069223842835130" class="card-img-top" alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-                            <!--Card content-->
-                            <div class="card-body text-center">
-                                <!--Title-->
-                                <h5>
-                                    <strong>
-                                        <a href="" class="dark-grey-text">Relógio Feminino Technomarine Aço
-                                            <span class="badge badge-pill danger-color">NEW</span>
-                                        </a>
-                                    </strong>
-                                </h5>
-
-                                <h4 class="font-weight-bold blue-text">
-                                    <strong>R$ 801,00</strong>
-                                </h4>
-                            </div>
-                            <!--Card content-->
-                        </div>
-                        <!--/Card-->
-                    </div>
-                    <div class="col-md-4">
-                        <!--Card-->
-                        <div class="card mb-4 shadow-sm">
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="https://d2d7stu5fcdz3l.cloudfront.net/Custom/Content/Products/11/18/1118684_relogio-champion-digital-ch40008j-joias-vip_m1_637063993569842297" class="card-img-top" alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-                            <!--Card content-->
-                            <div class="card-body text-center">
-                                <!--Title-->
-                                <h5>
-                                    <strong>
-                                        <a href="" class="dark-grey-text">Relógio Feminino Champion Digital CH40008J
-                                            <span class="badge badge-pill danger-color">NEW</span>
-                                        </a>
-                                    </strong>
-                                </h5>
-
-                                <h4 class="font-weight-bold blue-text">
-                                    <strong>R$ 205,00</strong>
-                                </h4>
-                            </div>
-                            <!--Card content-->
-                        </div>
-                        <!--/Card-->
-                    </div>
-                    <div class="col-md-4">
-                        <!--Card-->
-                        <div class="card mb-4 shadow-sm">
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="https://d2d7stu5fcdz3l.cloudfront.net/Custom/Content/Products/11/18/1118598_relogio-champion-digital-ch40062u-joias-vip_z1_637057959404022524" class="card-img-top" alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-                            <!--Card content-->
-                            <div class="card-body text-center">
-                                <!--Title-->
-                                <h5>
-                                    <strong>
-                                        <a href="" class="dark-grey-text">Relógio Feminino Champion Digital CH40062U
-                                            dourado
-                                        </a>
-                                    </strong>
-                                </h5>
-
-                                <h4 class="font-weight-bold blue-text">
-                                    <strong>R$ 330,00</strong>
-                                </h4>
-                            </div>
-                            <!--Card content-->
-                        </div>
-                        <!--/Card-->
-                    </div>
-                    <div class="col-md-4">
-                        <!--Card-->
-                        <div class="card mb-4 shadow-sm">
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="https://d2d7stu5fcdz3l.cloudfront.net/Custom/Content/Products/11/18/1118588_relogio-technos-elegance-crystal-2035mlg4c-joias-vip_z2_637060566718017618.jpg" class="card-img-top" alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-                            <!--Card content-->
-                            <div class="card-body text-center">
-                                <!--Title-->
-                                <h5>
-                                    <strong>
-                                        <a href="" class="dark-grey-text">Relógio Technos Elegance Crystal 2035MLG/4C
-                                        </a>
-                                    </strong>
-                                </h5>
-
-                                <h4 class="font-weight-bold blue-text">
-                                    <strong>R$ 330,00</strong>
-                                </h4>
-                            </div>
-                            <!--Card content-->
-                        </div>
-                        <!--/Card-->
-                    </div>
-                    <div class="col-md-4">
-                        <!--Card-->
-                        <div class="card mb-4 shadow-sm">
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="https://d2d7stu5fcdz3l.cloudfront.net/Custom/Content/Products/11/18/1118586_relogio-technos-fashion-digital-bj3478ab4p-joias-vip_z2_637060570967474169.jpg" class="card-img-top" alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-                            <!--Card content-->
-                            <div class="card-body text-center">
-                                <!--Title-->
-                                <h5>
-                                    <strong>
-                                        <a href="" class="dark-grey-text">Relógio Technos Fashion Digital BJ3478AB/4P
-                                        </a>
-                                    </strong>
-                                </h5>
-
-                                <h4 class="font-weight-bold blue-text">
-                                    <strong>R$ 330,00</strong>
-                                </h4>
-                            </div>
-                            <!--Card content-->
-                        </div>
-                        <!--/Card-->
-                    </div>
-                    <div class="col-md-4">
-                        <!--Card-->
-                        <div class="card mb-4 shadow-sm">
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="https://d2d7stu5fcdz3l.cloudfront.net/Custom/Content/Products/11/18/1118570_relogio-masculino-technos-performance-bj3814ab-1p_z2_637060572837008481.jpg" class="card-img-top" alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-                            <!--Card content-->
-                            <div class="card-body text-center">
-                                <!--Title-->
-                                <h5>
-                                    <strong>
-                                        <a href="" class="dark-grey-text">Relógio Masculino Technos Performance
-                                            BJ3814AB/1P
-                                        </a>
-                                    </strong>
-                                </h5>
-
-                                <h4 class="font-weight-bold blue-text">
-                                    <strong>R$ 330,00</strong>
-                                </h4>
-                            </div>
-                            <!--Card content-->
-                        </div>
-                        <!--/Card-->
-                    </div>
-                    <div class="col-md-4">
-                        <!--Card-->
-                        <div class="card mb-4 shadow-sm">
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="https://d2d7stu5fcdz3l.cloudfront.net/Custom/Content/Products/11/18/1118558_relogio-feminino-technos-sapphire-1l45aw-4p-joias-vip_z2_637057242488127325.jpg   " class="card-img-top" alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-                            <!--Card content-->
-                            <div class="card-body text-center">
-                                <!--Title-->
-                                <h5>
-                                    <strong>
-                                        <a href="" class="dark-grey-text">Relógio Masculino Technos Sapphire 1L45AW/4P
-                                        </a>
-                                    </strong>
-                                </h5>
-
-                                <h4 class="font-weight-bold blue-text">
-                                    <strong>R$ 330,00</strong>
-                                </h4>
-                            </div>
-                            <!--Card content-->
-                        </div>
-                        <!--/Card-->
-                    </div>
-                    <div class="col-md-4">
-                        <!--Card-->
-                        <div class="card mb-4 shadow-sm">
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="https://d2d7stu5fcdz3l.cloudfront.net/Custom/Content/Products/11/18/1118554_relogio-technos-elegance-2015bypbow4x-joias-vip_z2_637057245903848511.jpg" class="card-img-top" alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-                            <!--Card content-->
-                            <div class="card-body text-center">
-                                <!--Title-->
-                                <h5>
-                                    <strong>
-                                        <a href="" class="dark-grey-text">Relógio Technos Elegance 2015BYPBOW/4X
-                                        </a>
-                                    </strong>
-                                </h5>
-
-                                <h4 class="font-weight-bold blue-text">
-                                    <strong>R$ 330,00</strong>
-                                </h4>
-                            </div>
-                            <!--Card content-->
-                        </div>
-                        <!--/Card-->
-                    </div>
+                    <?php
+                    $controller = new PainelController();
+                    $list = $controller->listagem();
+                    if (count($list) > 0) {
+                        foreach ($list as $value) {
+                            echo '
+                                <div id="boxProduto" class="col-md-4">
+                                    <!--Card-->
+                                    <div class="card mb-4 shadow-sm">
+                                        <!--Card image-->
+                                        <div class="view overlay">
+                                            <img width="100%" height="225" src="/my-app/view/img/produtos/' . $value->prdImageName . '" class="card-img-top" alt="">
+                                            <a>
+                                                <div class="mask rgba-white-slight"></div>
+                                            </a>
+                                        </div>
+                                        <!--Card content-->
+                                        <div class="card-body text-center">
+                                            <!--Title-->
+                                            <h5>
+                                                <strong>
+                                                    <a href="" data-toggle="modal" data-target="#modalQuickView" class="dark-grey-text">' . $value->prdDesNome;
+                            if ($value->prdDtaCadastro > date('Y-m-d', strtotime('-1 month'))) {
+                                echo '<span class="badge badge-pill danger-color">NEW</span>';
+                            }
+                            echo '</a>
+                                                </strong>
+                                            </h5>
+                
+                                            <h4 class="font-weight-bold blue-text">
+                                                <strong>R$ ' . $value->prdMnyValor . '</strong>
+                                            </h4>
+                                        </div>
+                                        <!--Card content-->
+                                    </div>
+                                    <!--/Card-->
+                                </div>';
+                        }
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -314,7 +93,7 @@
 
     </div><!-- /.container -->
     <!-- footer -->
-    <?php include_once ("footer.php"); ?>
+    <?php include_once("footer.php"); ?>
 
     <!-- Modal: modalQuickView -->
     <div class="modal fade" id="modalQuickView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -369,11 +148,6 @@
                                 <span class="green-text">
                                     <strong>R$ 674,10</strong>
                                 </span>
-                                <!-- <span class="grey-text">
-                                    <small>
-                                        <s>R$ 990,00</s>
-                                    </small>
-                                </span> -->
                             </h4>
 
                             <!--Accordion wrapper-->

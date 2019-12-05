@@ -1,3 +1,13 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/LoginController.class.php';
+session_start();
+
+if (isset($_POST['login'])) {
+  $_SESSION['login'] = $_POST['login'];
+}
+
+?>
+
 <!DOCTYPE html>
 <!-- saved from url=(0052)https://getbootstrap.com/docs/4.3/examples/product/# -->
 <html lang="en">
@@ -20,34 +30,72 @@
 
 <body>
   <!-- NavBar -->
-  <?php include_once ("navbar.php"); ?>
+  <?php include_once("navbar.php"); ?>
   <!--Form Login-->
   <div class="container login-container">
     <div class="row">
       <form class="form-signin">
-        <img class="mb-4" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <!-- <img class="mb-4" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <label for="usnDesNome" class="sr-only">Login</label>
+        <input type="text" id="usnDesNome" class="form-control" placeholder="Login" required autofocus>
+        <label for="usnDesPass" class="sr-only">Password</label>
+        <input type="password" id="usnDesPass" class="form-control" placeholder="Password" required>
         <div class="checkbox mb-3">
           <label>
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button id="btnLogin" class="btn btnLogin btn-primary btn-block" type="button">Sign in</button>
       </form>
     </div>
   </div>
   <!-- footer -->
-  <?php include_once ("footer.php"); ?>
+  <?php include_once("footer.php"); ?>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="/my-app/view/js/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
   <script src="https://kit.fontawesome.com/6eb9089d0e.js"></script>
+
+  <script>
+    $(document).ready(
+      $(".btnLogin").click(function(e) {
+        var usnDesNome = document.getElementById("usnDesNome").value;
+        var usnDesPass = document.getElementById("usnDesPass").value;
+        var form_data = new FormData();
+        form_data.append('action', 'login');
+        form_data.append('usnDesNome', usnDesNome);
+        form_data.append('usnDesPass', usnDesPass);
+
+        $.ajax({
+          type: "POST",
+          url: "/my-app/com/controller/LoginController.class.php",
+          dataType: 'json',
+          data: form_data,
+          cache: false,
+          contentType: false,
+          processData: false,
+          success: function(response) {
+            if (response.return === null) {
+              alert("Senha ou login não encontrados.");
+            } else {
+              alert("Login realizado com sucesso.");
+              $.ajax({
+                data: {
+                  "login": response.return['usnDesNome']
+                },
+                url: '/my-app/view/login.php',
+                type: 'post'
+              });
+              window.location.href = "/my-app/view/painelListagem.php";
+            }
+          }
+        });
+      })
+    );
+  </script>
 </body>
 
 </html>
