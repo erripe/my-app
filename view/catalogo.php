@@ -54,7 +54,7 @@ session_start();
                                     <div class="card mb-4 shadow-sm">
                                         <!--Card image-->
                                         <div class="view overlay">
-                                            <img width="100%" height="225" src="/my-app/view/img/produtos/' . $value->prdImageName . '" class="card-img-top" alt="">
+                                            <img width="100%" height="325" src="/my-app/view/img/produtos/' . $value->prdImageName . '" class="card-img-top" alt="">
                                             <a>
                                                 <div class="mask rgba-white-slight"></div>
                                             </a>
