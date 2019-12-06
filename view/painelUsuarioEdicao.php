@@ -59,7 +59,7 @@ if (isset($_GET['usnCod'])) {
 
                 <div class="mb-3">
                   <label for="usnDesPass">Senha</label>
-                  <input type="text" class="form-control" id="usnDesPass" placeholder="" value="<?php echo $usuario->usnDesPass; ?>" required>
+                  <input type="password" class="form-control" id="usnDesPass" placeholder="" value="<?php echo $usuario->usnDesPass; ?>" required>
                   <div class="invalid-feedback">
                     Descrição do usuario inválido.
                   </div>
