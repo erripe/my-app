@@ -42,10 +42,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/MainController.class
           </svg>
           <div class="container">
             <div class="carousel-caption text-left">
-              <h1>Example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-                metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/4.3/examples/carousel/#" role="button">Sign up today</a></p>
+              <h1>Deseja fazer seu orçamento?</h1>
+              <p>Entre em contato conosco e faça seu orçamento. Jóias personalizadas, com exclusividade para você!</p>
+              <p><a class="btn btn-lg btn-primary" href="" role="button">Orçamento</a></p>
             </div>
           </div>
         </div>
@@ -55,10 +54,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/MainController.class
           </svg>
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-                metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/4.3/examples/carousel/#" role="button">Learn more</a></p>
+              <h1>Oficina de Jóias e Relógios</h1>
+              <p>60 anos de tradição, transformando os seus sonhos em arte.</p>
+              <p><a class="btn btn-lg btn-primary" href="" role="button">Leia mais</a></p>
             </div>
           </div>
         </div>
@@ -68,10 +66,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/MainController.class
           </svg>
           <div class="container">
             <div class="carousel-caption text-right">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-                metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/4.3/examples/carousel/#" role="button">Browse gallery</a></p>
+              <h1>Já viu nosso catalogo de produtos?</h1>
+              <p>Os mais belos relógios e jóias especialmente para você. Visite nossa galeria.</p>
+              <p><a class="btn btn-lg btn-primary" href="/my-app/view/catalogo.php" role="button">Galeria</a></p>
             </div>
           </div>
         </div>
