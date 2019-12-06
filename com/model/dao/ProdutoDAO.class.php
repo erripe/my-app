@@ -17,9 +17,20 @@ class ProdutoDAO
         return $result->fetch_object();
     }
 
+    public function findList($prdDesNome)
+    {
+        $sql = "SELECT * FROM Produtos WHERE prdDesNome LIKE ('%" . $prdDesNome . "%') ORDER BY prdDtaCadastro DESC";
+        $result = $this->db->mysqli->query($sql);
+        $rows = [];
+        while ($entry = $result->fetch_object()) {
+            $rows[] = $entry;
+        }
+        return $rows;
+    }
+
     public function list()
     {
-        $sql = "SELECT * FROM Produtos";
+        $sql = "SELECT * FROM Produtos ORDER BY prdDtaCadastro DESC";
         $result = $this->db->mysqli->query($sql);
         $rows = [];
         while ($entry = $result->fetch_object()) {
@@ -30,7 +41,7 @@ class ProdutoDAO
 
     public function listMain()
     {
-        $sql = "SELECT * FROM Produtos ORDER BY prdDtaCadastro DESC LIMIT 3 ";
+        $sql = "SELECT * FROM Produtos ORDER BY prdDtaCadastro DESC LIMIT 3";
         $result = $this->db->mysqli->query($sql);
         $rows = [];
         while ($entry = $result->fetch_object()) {

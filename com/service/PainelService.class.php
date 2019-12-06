@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/model/Produto.class.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/model/Produto.class.php';
 
 class PainelService
 {
@@ -10,6 +10,12 @@ class PainelService
     {
         $produto = new Produto();
         return $produto->findById($prdCod);
+    }
+
+    public function findList($prdDesNome)
+    {
+        $produto = new Produto();
+        return $produto->findList($prdDesNome);
     }
 
     public function listagem()

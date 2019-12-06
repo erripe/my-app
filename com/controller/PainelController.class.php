@@ -47,6 +47,12 @@ class PainelController
         return $service->findById($prdCod);
     }
 
+    public function findList($prdDesNome)
+    {
+        $service = new PainelService();
+        return $service->findList($prdDesNome);
+    }
+
     public function listagem()
     {
         $service = new PainelService();

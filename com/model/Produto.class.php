@@ -21,6 +21,12 @@ class Produto
         return $produtoDAO->findById($prdCod);
     }
 
+    public function findList($prdDesNome)
+    {
+        $produtoDAO = new ProdutoDAO();
+        return $produtoDAO->findList($prdDesNome);
+    }
+
     public function list()
     {
         $produtoDAO = new ProdutoDAO();

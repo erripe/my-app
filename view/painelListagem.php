@@ -66,7 +66,6 @@ if (!isset($_SESSION["login"])) {
                       echo '<td>' . $value->prdEspDesc . '</td>';
                       echo '<td class="middle">
                       <button id="btnImg" value="' . $value->prdCod . '" data-toggle="modal" data-target="#myModal' . $value->prdCod . '" type="button" class="btn btn-img btn-primary"><i class="far fa-eye"></i></button> 
-                      <!--<button id="btnEdit" value="' . $value->prdCod . '"type="button" class="btn btn-edit btn-success"><i class="fas fa-edit"></i></button>-->
                       <a href="/my-app/view/PainelEdicao.php?prdCod=' . $value->prdCod . '" id="btnEdit"  class="btn btn-edit btn-success"><i class="fas fa-edit"></i></a>
                       <button id="btnDelete" value="' . $value->prdCod . '" type="button" class="btn btn-delete btn-danger"><i class="far fa-trash-alt"></i></button>
                       </td>
@@ -100,32 +99,21 @@ if (!isset($_SESSION["login"])) {
   <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
   <script src="https://kit.fontawesome.com/6eb9089d0e.js"></script>
 
-  <script>
-    $(document).ready(
-      $(".btn-delete").click(function() {
-        var id = $(this).val();
-        $.ajax({
-          url: "/my-app/com/controller/PainelController.class.php",
-          type: "POST",
-          dataType: "json",
-          data: {
-            action: 'delete',
-            prdCod: id
-          },
-          success: function(response) {
-            if (response.return === 1) {
-              alert("Operação realizada com sucesso.");
-              location.reload();
-            } else {
-              alert("Erro ao realizar a operação.");
-            }
-          },
-          error: function(response) {
-            alert('ERRO!');
+  <script type="text/javascript">
+    // Using jQuery.
+
+    $(function() {
+      $('form').each(function() {
+        $(this).find('input').keypress(function(e) {
+          // Enter pressed?
+          if (e.which == 10 || e.which == 13) {
+            this.form.submit();
           }
         });
-      })
-    );
+
+        $(this).find('input[type=submit]').hide();
+      });
+    });
   </script>
 
 

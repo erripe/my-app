@@ -45,7 +45,12 @@ session_start();
 
                     <?php
                     $controller = new PainelController();
-                    $list = $controller->listagem();
+                    if (isset($_GET['prdDesNome'])) {
+                        $list = $controller->findList($_GET['prdDesNome']);
+                    } else {
+                        $list = $controller->listagem();
+                    }
+
                     if (count($list) > 0) {
                         foreach ($list as $value) {
                             echo '
@@ -60,7 +65,7 @@ session_start();
                                             </a>
                                         </div>
                                         <!--Card content-->
-                                        <div class="card-body text-center">
+                                        <div class="card-body text-center" style="height: 150px;">
                                             <!--Title-->
                                             <h5>
                                                 <strong>

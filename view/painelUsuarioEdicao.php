@@ -49,7 +49,7 @@ if (isset($_GET['usnCod'])) {
                 <!-- form multi plataform para submeter imagem -->
                 <div class="row">
                   <div class="col-md-12 mb-3">
-                    <label for="usnDesNome">Nome</label>
+                    <label for="usnDesNome">Login</label>
                     <input type="text" class="form-control" id="usnDesNome" placeholder="" value="<?php echo $usuario->usnDesNome; ?>" required>
                     <div class="invalid-feedback">
                       Nome do usuario inválido.
