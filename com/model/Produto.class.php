@@ -27,6 +27,12 @@ class Produto
         return $produtoDAO->list();
     }
 
+    public function listMain()
+    {
+        $produtoDAO = new ProdutoDAO();
+        return $produtoDAO->listMain();
+    }
+
     public function insert()
     {
         $produtoDAO = new ProdutoDAO();

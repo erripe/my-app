@@ -28,6 +28,17 @@ class ProdutoDAO
         return $rows;
     }
 
+    public function listMain()
+    {
+        $sql = "SELECT * FROM Produtos ORDER BY prdDtaCadastro DESC LIMIT 3 ";
+        $result = $this->db->mysqli->query($sql);
+        $rows = [];
+        while ($entry = $result->fetch_object()) {
+            $rows[] = $entry;
+        }
+        return $rows;
+    }
+
     public function insert($produto)
     {
         $ext = strtolower(substr($produto->prdImage['name'], -4));

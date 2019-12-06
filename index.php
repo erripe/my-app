@@ -1,5 +1,7 @@
 <?php
 define('BASE_PATH', str_replace('\\', '/', dirname(__FILE__)));
+include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/MainController.class.php';
+
 ?>
 <!DOCTYPE html>
 <!-- saved from url=(0052)https://getbootstrap.com/docs/4.3/examples/product/# -->
@@ -74,11 +76,11 @@ define('BASE_PATH', str_replace('\\', '/', dirname(__FILE__)));
           </div>
         </div>
       </div>
-      <a class="carousel-control-prev" href="" role="button" data-slide="prev">
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="carousel-control-next" href="" role="button" data-slide="next">
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
@@ -90,58 +92,60 @@ define('BASE_PATH', str_replace('\\', '/', dirname(__FILE__)));
 
     <div class="container marketing">
       <!-- START THE FEATURETTES -->
+      <?php
+      $controller = new MainController();
+      $list = $controller->listagem();
 
-      <div class="row featurette">
+      $list[0]->prdCod;
+
+      echo '<div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span>
+          <h2 class="featurette-heading">' . $list[0]->prdDesNome . '
           </h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
-            semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-            commodo.</p>
+          <p class="lead">' . $list[0]->prdEspDesc . '</p>
         </div>
         <div class="col-md-5">
-          <svg class="zoom bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+          <img class="zoom bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/my-app/view/img/produtos/' . $list[0]->prdImageName . '" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
+            <title>' . $list[0]->prdDesNome . '</title>
+            <rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em"></text>
           </svg>
         </div>
       </div>
 
-      <hr class="featurette-divider">
+      <hr class="featurette-divider">';
 
-      <div class="row featurette">
+      echo '<div class="row featurette">
         <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
-            semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-            commodo.</p>
+          <h2 class="featurette-heading">' . $list[1]->prdDesNome . '
+          </h2>
+          <p class="lead">' . $list[1]->prdEspDesc . '</p>
         </div>
         <div class="col-md-5 order-md-1">
-          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+        <img class="zoom bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/my-app/view/img/produtos/' . $list[1]->prdImageName . '" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
+            <title>' . $list[1]->prdDesNome . '</title>
+            <rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em"></text>
           </svg>
         </div>
       </div>
 
-      <hr class="featurette-divider">
+      <hr class="featurette-divider">';
 
-      <div class="row featurette">
+      echo '<div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
-            semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-            commodo.</p>
+          <h2 class="featurette-heading">' . $list[2]->prdDesNome . '
+          </h2>
+          <p class="lead">' . $list[2]->prdEspDesc . '</p>
         </div>
         <div class="col-md-5">
-          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+        <img class="zoom bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/my-app/view/img/produtos/' . $list[2]->prdImageName . '" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
+            <title>' . $list[2]->prdDesNome . '</title>
+            <rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em"></text>
           </svg>
         </div>
       </div>
 
-      <hr class="featurette-divider">
+      <hr class="featurette-divider">';
+      ?>
 
       <!-- /END THE FEATURETTES -->
     </div>
