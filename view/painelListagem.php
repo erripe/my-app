@@ -100,20 +100,32 @@ if (!isset($_SESSION["login"])) {
   <script src="https://kit.fontawesome.com/6eb9089d0e.js"></script>
 
   <script type="text/javascript">
-    // Using jQuery.
-
-    $(function() {
-      $('form').each(function() {
-        $(this).find('input').keypress(function(e) {
-          // Enter pressed?
-          if (e.which == 10 || e.which == 13) {
-            this.form.submit();
-          }
-        });
-
-        $(this).find('input[type=submit]').hide();
-      });
-    });
+    $(document).ready(
+      $(".btn-delete").click(function() {
+        var id = $(this).val();
+        var result = confirm("Deseja deletar o registro?");
+        if (result) {
+          $.ajax({
+            url: "/my-app/com/controller/PainelController.class.php",
+            type: "POST",
+            dataType: "json",
+            data: {
+              action: 'delete',
+              prdCod: id
+            },
+            success: function(response) {
+              if (response.return === 1) {
+                location.reload();
+              } else {
+                alert("Erro ao realizar a operação.");
+              }
+            },
+            error: function(response) {
+              alert('ERRO!');
+            }
+          });
+        }
+      }));
   </script>
 
 

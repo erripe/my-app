@@ -90,26 +90,28 @@ if (!isset($_SESSION["login"])) {
     $(document).ready(
       $(".btn-delete").click(function() {
         var id = $(this).val();
-        $.ajax({
-          url: "/my-app/com/controller/LoginController.class.php",
-          type: "POST",
-          dataType: "json",
-          data: {
-            action: 'delete',
-            usnCod: id
-          },
-          success: function(response) {
-            if (response.return === 1) {
-              alert("Operação realizada com sucesso.");
-              location.reload();
-            } else {
-              alert("Erro ao realizar a operação.");
+        var result = confirm("Deseja deletar o registro?");
+        if (result) {
+          $.ajax({
+            url: "/my-app/com/controller/LoginController.class.php",
+            type: "POST",
+            dataType: "json",
+            data: {
+              action: 'delete',
+              usnCod: id
+            },
+            success: function(response) {
+              if (response.return === 1) {
+                location.reload();
+              } else {
+                alert("Erro ao realizar a operação.");
+              }
+            },
+            error: function(response) {
+              alert('ERRO!');
             }
-          },
-          error: function(response) {
-            alert('ERRO!');
-          }
-        });
+          });
+        }
       })
     );
   </script>
