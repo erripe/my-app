@@ -10,9 +10,9 @@ class Database
 
     public function __construct()
     {
-        $this->servidor = "localhost";
+        $this->servidor = "teste.com.zz";
         $this->usuario = "root";
-        $this->senha = "123456";
+        $this->senha = "";
         $this->banco = "ReloLoss";
 
         $this->mysqli = new mysqli($this->servidor, $this->usuario, $this->senha, $this->banco);
