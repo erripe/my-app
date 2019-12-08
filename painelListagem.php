@@ -3,7 +3,7 @@ include('com/controller/PainelController.class.php');
 session_start();
 
 if (!isset($_SESSION["login"])) {
-  header("Location: view/login.php");
+  header("Location: login.php");
 }
 
 ?>
@@ -30,7 +30,7 @@ if (!isset($_SESSION["login"])) {
 
 <body>
   <!-- NavBar -->
-  <?php include_once("view/navbar.php"); ?>
+  <?php include_once("navbar.php"); ?>
   <div class="container-fluid">
     <div class="row">
       <?php include_once "painelLateral.php"; ?>
@@ -65,7 +65,7 @@ if (!isset($_SESSION["login"])) {
                       echo '<td>' . $value->prdEspDesc . '</td>';
                       echo '<td class="middle">
                       <button id="btnImg" value="' . $value->prdCod . '" data-toggle="modal" data-target="#myModal' . $value->prdCod . '" type="button" class="btn btn-img btn-primary"><i class="far fa-eye"></i></button> 
-                      <a href="/view/PainelEdicao.php?prdCod=' . $value->prdCod . '" id="btnEdit"  class="btn btn-edit btn-success"><i class="fas fa-edit"></i></a>
+                      <a href="PainelEdicao.php?prdCod=' . $value->prdCod . '" id="btnEdit"  class="btn btn-edit btn-success"><i class="fas fa-edit"></i></a>
                       <button id="btnDelete" value="' . $value->prdCod . '" type="button" class="btn btn-delete btn-danger"><i class="far fa-trash-alt"></i></button>
                       </td>
                       </tr>';

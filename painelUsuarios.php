@@ -3,7 +3,7 @@ include('com/controller/LoginController.class.php');
 session_start();
 
 if (!isset($_SESSION["login"])) {
-  header("Location: view/login.php");
+  header("Location: login.php");
 }
 
 ?>
@@ -30,10 +30,10 @@ if (!isset($_SESSION["login"])) {
 
 <body>
   <!-- NavBar -->
-  <?php include_once("view/navbar.php"); ?>
+  <?php include_once("navbar.php"); ?>
   <div class="container-fluid">
     <div class="row">
-      <?php include_once "view/painelLateral.php"; ?>
+      <?php include_once "painelLateral.php"; ?>
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
           <h1 class="h2">Cadastro de Usuários</h1>
@@ -62,7 +62,7 @@ if (!isset($_SESSION["login"])) {
                       echo '<td>' . $value->usnDesNome . '</td>';
                       echo '<td>' . $value->usnDesPass . '</td>';
                       echo '<td class="middle">
-                      <a href="view/PainelUsuarioEdicao.php?usnCod=' . $value->usnCod . '" id="btnEdit"  class="btn btn-edit btn-success"><i class="fas fa-edit"></i></a>
+                      <a href="PainelUsuarioEdicao.php?usnCod=' . $value->usnCod . '" id="btnEdit"  class="btn btn-edit btn-success"><i class="fas fa-edit"></i></a>
                       <button id="btnDelete" value="' . $value->usnCod . '" type="button" class="btn btn-delete btn-danger"><i class="far fa-trash-alt"></i></button>
                       </td>
                       </tr>';

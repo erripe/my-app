@@ -12,13 +12,13 @@
         <div class="col-9 col-md">
             <h5>Produtos</h5>
             <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="view/catalogo.php">Joias</a>
+                <li><a class="text-muted" href="catalogo.php">Joias</a>
                 </li>
-                <li><a class="text-muted" href="view/catalogo.php">Alianças</a>
+                <li><a class="text-muted" href="catalogo.php">Alianças</a>
                 </li>
-                <li><a class="text-muted" href="view/catalogo.php">Relógios</a>
+                <li><a class="text-muted" href="catalogo.php">Relógios</a>
                 </li>
-                <li><a class="text-muted" href="view/catalogo.php">Novidades</a>
+                <li><a class="text-muted" href="catalogo.php">Novidades</a>
                 </li>
             </ul>
         </div>

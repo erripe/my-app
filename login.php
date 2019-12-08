@@ -85,10 +85,10 @@ if (isset($_POST['login'])) {
                 data: {
                   "login": response.return['usnDesNome']
                 },
-                url: 'view/login.php',
+                url: 'login.php',
                 type: 'post'
               });
-              window.location.href = "view/painelListagem.php";
+              window.location.href = "painelListagem.php";
             }
           }
         });

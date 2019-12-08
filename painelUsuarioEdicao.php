@@ -24,17 +24,17 @@ if (isset($_GET['usnCod'])) {
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Custom styles for this template -->
-  <link rel="stylesheet" href="/view/css/dashboard.css">
-  <link rel="stylesheet" href="/view/css/main.css">
+  <link rel="stylesheet" href="view/css/dashboard.css">
+  <link rel="stylesheet" href="view/css/main.css">
 
 </head>
 
 <body>
   <!-- NavBar -->
-  <?php include_once("view/navbar.php"); ?>
+  <?php include_once("navbar.php"); ?>
   <div class="container-fluid">
     <div class="row">
-      <?php include_once("view/painelLateral.php"); ?>
+      <?php include_once("painelLateral.php"); ?>
 
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
@@ -104,7 +104,7 @@ if (isset($_GET['usnCod'])) {
             if (response.return !== "") {
               alert("Operação realizada com sucesso.");
               if (usnCod !== "") {
-                window.location.href = "view/painelUsuarios.php";
+                window.location.href = "painelUsuarios.php";
               } else {
                 location.reload();
               }
