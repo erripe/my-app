@@ -70,7 +70,7 @@ session_start();
 
         $.ajax({
           type: "POST",
-          url: "com/controller/LoginController.class.php",
+          url: "/com/controller/LoginController.class.php",
           dataType: 'json',
           data: form_data,
           cache: false,
