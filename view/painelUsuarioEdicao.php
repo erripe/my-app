@@ -31,10 +31,10 @@ if (isset($_GET['usnCod'])) {
 
 <body>
   <!-- NavBar -->
-  <?php include_once("/view/navbar.php"); ?>
+  <?php include_once("view/navbar.php"); ?>
   <div class="container-fluid">
     <div class="row">
-      <?php include_once("painelLateral.php"); ?>
+      <?php include_once("view/painelLateral.php"); ?>
 
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
@@ -74,7 +74,7 @@ if (isset($_GET['usnCod'])) {
     </div>
   </div>
 
-  <script src="/view/js/jquery-3.4.1.min.js"></script>
+  <script src="view/js/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
@@ -94,7 +94,7 @@ if (isset($_GET['usnCod'])) {
 
         $.ajax({
           type: "POST",
-          url: "/com/controller/LoginController.class.php",
+          url: "com/controller/LoginController.class.php",
           dataType: 'text',
           data: form_data,
           cache: false,
@@ -104,7 +104,7 @@ if (isset($_GET['usnCod'])) {
             if (response.return !== "") {
               alert("Operação realizada com sucesso.");
               if (usnCod !== "") {
-                window.location.href = "/view/painelUsuarios.php";
+                window.location.href = "view/painelUsuarios.php";
               } else {
                 location.reload();
               }
