@@ -85,7 +85,7 @@ session_start();
                 data: {
                   "login": response.return['usnDesNome']
                 },
-                url: 'login.php',
+                url: 'painelListagem.php',
                 type: 'POST'
               });
               window.location.href = "painelListagem.php";
