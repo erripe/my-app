@@ -103,7 +103,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/com/controller/MainController.class.p
           <p class="lead">' . $list[0]->prdEspDesc . '</p>
         </div>
         <div class="col-md-5">
-          <img class="zoom bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="view/img/produtos/' . $list[0]->prdImageName . '" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
+          <img class="zoom bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/view/img/produtos/' . $list[0]->prdImageName . '" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
             <title>' . $list[0]->prdDesNome . '</title>
             <rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em"></text>
           </svg>
@@ -119,7 +119,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/com/controller/MainController.class.p
           <p class="lead">' . $list[1]->prdEspDesc . '</p>
         </div>
         <div class="col-md-5 order-md-1">
-        <img class="zoom bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="view/img/produtos/' . $list[1]->prdImageName . '" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
+        <img class="zoom bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/view/img/produtos/' . $list[1]->prdImageName . '" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
             <title>' . $list[1]->prdDesNome . '</title>
             <rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em"></text>
           </svg>
@@ -135,7 +135,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/com/controller/MainController.class.p
           <p class="lead">' . $list[2]->prdEspDesc . '</p>
         </div>
         <div class="col-md-5">
-        <img class="zoom bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="view/img/produtos/' . $list[2]->prdImageName . '" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
+        <img class="zoom bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/view/img/produtos/' . $list[2]->prdImageName . '" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
             <title>' . $list[2]->prdDesNome . '</title>
             <rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em"></text>
           </svg>

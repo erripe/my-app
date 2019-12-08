@@ -63,7 +63,7 @@ session_start();
                                         <!--Card image-->
                                         <div class="view overlay">
                                             <a href="" data-toggle="modal" data-target="#modalQuickView' . $value->prdCod . '" class="dark-grey-text">
-                                            <img width="100%" height="325" src="view/img/produtos/' . $value->prdImageName . '" class="card-img-top" alt="">
+                                            <img width="100%" height="325" src="/view/img/produtos/' . $value->prdImageName . '" class="card-img-top" alt="">
                                             <a>
                                                 <div class="mask rgba-white-slight"></div>
                                             </a>
@@ -99,7 +99,7 @@ session_start();
                                                 <div class="col-lg-5">
                                                     <!--Image Wrapper-->
                                                     <div class="view overlay">
-                                                        <img width="100%" height="325" src="view/img/produtos/' . $value->prdImageName . '" class="card-img-top" alt="">
+                                                        <img width="100%" height="325" src="/view/img/produtos/' . $value->prdImageName . '" class="card-img-top" alt="">
                                                         <a>
                                                             <div class="mask rgba-white-slight"></div>
                                                         </a>
