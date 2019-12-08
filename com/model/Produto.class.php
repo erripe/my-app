@@ -1,5 +1,5 @@
 <?php
-include('com/model/dao/ProdutoDAO.class.php');
+include_once $_SERVER['DOCUMENT_ROOT'] . '/html/com/model/dao/ProdutoDAO.class.php';
 
 class Produto
 {

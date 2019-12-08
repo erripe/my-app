@@ -1,5 +1,5 @@
 <?php
-include('com/controller/LoginController.class.php');
+include_once $_SERVER['DOCUMENT_ROOT'] . '/html/com/controller/LoginController.class.php';
 session_start();
 $controller = new LoginController();
 $usuario = new Usuario();

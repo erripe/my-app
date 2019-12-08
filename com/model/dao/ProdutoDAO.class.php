@@ -1,5 +1,8 @@
 <?php
-include_once('com/util/Database.class.php');
+include_once $_SERVER['DOCUMENT_ROOT'] . '/html/com/util/Database.class.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 class ProdutoDAO
 {

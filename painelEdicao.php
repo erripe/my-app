@@ -1,5 +1,5 @@
 <?php
-include('com/controller/PainelController.class.php');
+include_once $_SERVER['DOCUMENT_ROOT'] . '/html/com/controller/PainelController.class.php';
 session_start();
 $controller = new PainelController();
 $produto = new Produto();

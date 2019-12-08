@@ -1,7 +1,5 @@
 <?php
-set_include_path($_SERVER['DOCUMENT_ROOT']);
-include('com/controller/MainController.class.php');
-
+include_once $_SERVER['DOCUMENT_ROOT'] . '/html/com/controller/MainController.class.php';
 ?>
 <!DOCTYPE html>
 <!-- saved from url=(0052)https://getbootstrap.com/docs/4.3/examples/product/# -->

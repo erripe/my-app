@@ -1,5 +1,5 @@
 <?php
-include('com/service/PainelService.class.php');
+include $_SERVER['DOCUMENT_ROOT'] . '/html/com/service/PainelService.class.php';
 
 if (isset($_POST['action'])) {
 
