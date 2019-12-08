@@ -1,6 +1,5 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/com/controller/LoginController.class.php';
-session_start();
 
 ?>
 
