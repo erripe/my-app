@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/html/com/controller/LoginController.class.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/com/controller/LoginController.class.php';
 session_start();
 $controller = new LoginController();
 $usuario = new Usuario();
