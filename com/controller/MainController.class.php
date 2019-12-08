@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/service/MainService.class.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/com/service/MainService.class.php';
 
 class MainController
 {

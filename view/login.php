@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/LoginController.class.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/com/controller/LoginController.class.php';
 session_start();
 
 if (isset($_POST['login'])) {
@@ -22,8 +22,8 @@ if (isset($_POST['login'])) {
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="/my-app/view/css/signin.css">
-  <link rel="stylesheet" href="/my-app/view/css/main.css">
+  <link rel="stylesheet" href="/view/css/signin.css">
+  <link rel="stylesheet" href="/view/css/main.css">
 
 </head>
 
@@ -52,7 +52,7 @@ if (isset($_POST['login'])) {
   <!-- footer -->
   <?php include_once("footer.php"); ?>
 
-  <script src="/my-app/view/js/jquery-3.4.1.min.js"></script>
+  <script src="/view/js/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
@@ -70,7 +70,7 @@ if (isset($_POST['login'])) {
 
         $.ajax({
           type: "POST",
-          url: "/my-app/com/controller/LoginController.class.php",
+          url: "/com/controller/LoginController.class.php",
           dataType: 'json',
           data: form_data,
           cache: false,
@@ -85,10 +85,10 @@ if (isset($_POST['login'])) {
                 data: {
                   "login": response.return['usnDesNome']
                 },
-                url: '/my-app/view/login.php',
+                url: '/view/login.php',
                 type: 'post'
               });
-              window.location.href = "/my-app/view/painelListagem.php";
+              window.location.href = "/view/painelListagem.php";
             }
           }
         });

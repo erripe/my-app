@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/LoginController.class.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/com/controller/LoginController.class.php';
 session_start();
 $controller = new LoginController();
 $usuario = new Usuario();
@@ -24,14 +24,14 @@ if (isset($_GET['usnCod'])) {
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Custom styles for this template -->
-  <link rel="stylesheet" href="/my-app/view/css/dashboard.css">
-  <link rel="stylesheet" href="/my-app/view/css/main.css">
+  <link rel="stylesheet" href="/view/css/dashboard.css">
+  <link rel="stylesheet" href="/view/css/main.css">
 
 </head>
 
 <body>
   <!-- NavBar -->
-  <?php include_once("/my-app/view/navbar.php"); ?>
+  <?php include_once("/view/navbar.php"); ?>
   <div class="container-fluid">
     <div class="row">
       <?php include_once("painelLateral.php"); ?>
@@ -74,7 +74,7 @@ if (isset($_GET['usnCod'])) {
     </div>
   </div>
 
-  <script src="/my-app/view/js/jquery-3.4.1.min.js"></script>
+  <script src="/view/js/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
@@ -94,7 +94,7 @@ if (isset($_GET['usnCod'])) {
 
         $.ajax({
           type: "POST",
-          url: "/my-app/com/controller/LoginController.class.php",
+          url: "/com/controller/LoginController.class.php",
           dataType: 'text',
           data: form_data,
           cache: false,
@@ -104,7 +104,7 @@ if (isset($_GET['usnCod'])) {
             if (response.return !== "") {
               alert("Operação realizada com sucesso.");
               if (usnCod !== "") {
-                window.location.href = "/my-app/view/painelUsuarios.php";
+                window.location.href = "/view/painelUsuarios.php";
               } else {
                 location.reload();
               }

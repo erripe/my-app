@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/PainelController.class.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/com/controller/PainelController.class.php';
 session_start();
 ?>
 
@@ -18,14 +18,14 @@ session_start();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="/my-app/view/css/main.css">
+    <link rel="stylesheet" href="/view/css/main.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
 
 </head>
 
 <body>
     <!-- NavBar -->
-    <?php include_once("/my-app/view/navbar.php"); ?>
+    <?php include_once("/view/navbar.php"); ?>
 
     <!-- Marketing messaging and featurettes
         ================================================== -->
@@ -59,7 +59,7 @@ session_start();
                                         <!--Card image-->
                                         <div class="view overlay">
                                             <a href="" data-toggle="modal" data-target="#modalQuickView' . $value->prdCod . '" class="dark-grey-text">
-                                            <img width="100%" height="325" src="/my-app/view/img/produtos/' . $value->prdImageName . '" class="card-img-top" alt="">
+                                            <img width="100%" height="325" src="/view/img/produtos/' . $value->prdImageName . '" class="card-img-top" alt="">
                                             <a>
                                                 <div class="mask rgba-white-slight"></div>
                                             </a>
@@ -95,7 +95,7 @@ session_start();
                                                 <div class="col-lg-5">
                                                     <!--Image Wrapper-->
                                                     <div class="view overlay">
-                                                        <img width="100%" height="325" src="/my-app/view/img/produtos/' . $value->prdImageName . '" class="card-img-top" alt="">
+                                                        <img width="100%" height="325" src="/view/img/produtos/' . $value->prdImageName . '" class="card-img-top" alt="">
                                                         <a>
                                                             <div class="mask rgba-white-slight"></div>
                                                         </a>
@@ -163,7 +163,7 @@ session_start();
 
     </div><!-- /.container -->
     <!-- footer -->
-    <?php include_once("/my-app/view/footer.php"); ?>
+    <?php include_once("/view/footer.php"); ?>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>

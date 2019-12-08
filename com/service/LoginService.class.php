@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/model/Usuario.class.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/com/model/Usuario.class.php';
 
 class LoginService
 {

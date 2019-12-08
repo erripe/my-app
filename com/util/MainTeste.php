@@ -1,8 +1,8 @@
 <?php
 ini_set('display_errors', 'On');
 error_reporting(E_ALL);
-//include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/model/Pessoa.class.php';
-include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/model/Produto.class.php';
+//include $_SERVER['DOCUMENT_ROOT'] . '/com/model/Pessoa.class.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/com/model/Produto.class.php';
 
 
 // $pessoa = new Pessoa();

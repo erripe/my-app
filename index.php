@@ -1,6 +1,6 @@
 <?php
 define('BASE_PATH', str_replace('\\', '/', dirname(__FILE__)));
-include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/MainController.class.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/com/controller/MainController.class.php';
 
 ?>
 <!DOCTYPE html>
@@ -19,14 +19,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/MainController.class
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Custom styles for this template -->
-  <link href="/my-app/view/css/carousel.css" rel="stylesheet">
+  <link href="/view/css/carousel.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
 
 </head>
 
 <body>
   <!-- NavBar -->
-  <?php include_once("/my-app/view/navbar.php"); ?>
+  <?php include_once("/view/navbar.php"); ?>
   <main role="main">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -67,7 +67,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/MainController.class
             <div class="carousel-caption text-right">
               <h1>Já viu nosso catalogo de produtos?</h1>
               <p>Os mais belos relógios e jóias especialmente para você. Visite nossa galeria.</p>
-              <p><a class="btn btn-lg btn-primary" href="/my-app/view/catalogo.php" role="button">Galeria</a></p>
+              <p><a class="btn btn-lg btn-primary" href="/view/catalogo.php" role="button">Galeria</a></p>
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/MainController.class
           <p class="lead">' . $list[0]->prdEspDesc . '</p>
         </div>
         <div class="col-md-5">
-          <img class="zoom bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/my-app/view/img/produtos/' . $list[0]->prdImageName . '" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
+          <img class="zoom bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/view/img/produtos/' . $list[0]->prdImageName . '" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
             <title>' . $list[0]->prdDesNome . '</title>
             <rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em"></text>
           </svg>
@@ -117,7 +117,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/MainController.class
           <p class="lead">' . $list[1]->prdEspDesc . '</p>
         </div>
         <div class="col-md-5 order-md-1">
-        <img class="zoom bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/my-app/view/img/produtos/' . $list[1]->prdImageName . '" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
+        <img class="zoom bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/view/img/produtos/' . $list[1]->prdImageName . '" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
             <title>' . $list[1]->prdDesNome . '</title>
             <rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em"></text>
           </svg>
@@ -133,7 +133,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/MainController.class
           <p class="lead">' . $list[2]->prdEspDesc . '</p>
         </div>
         <div class="col-md-5">
-        <img class="zoom bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/my-app/view/img/produtos/' . $list[2]->prdImageName . '" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
+        <img class="zoom bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/view/img/produtos/' . $list[2]->prdImageName . '" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
             <title>' . $list[2]->prdDesNome . '</title>
             <rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em"></text>
           </svg>
@@ -146,7 +146,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/MainController.class
       <!-- /END THE FEATURETTES -->
     </div>
     <!-- footer -->
-    <?php include_once("/my-app/view/footer.php"); ?>
+    <?php include_once("/view/footer.php"); ?>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>

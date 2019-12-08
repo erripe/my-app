@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/util/Database.class.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/com/util/Database.class.php';
 
 class ProdutoDAO
 {
@@ -54,7 +54,7 @@ class ProdutoDAO
     {
         $ext = strtolower(substr($produto->prdImage['name'], -4));
         $new_name =  md5(time()) . $ext;
-        $dir = $_SERVER['DOCUMENT_ROOT'] . '/my-app/view/img/produtos/';
+        $dir = $_SERVER['DOCUMENT_ROOT'] . '/view/img/produtos/';
         move_uploaded_file($produto->prdImage['tmp_name'], $dir . $new_name);
 
         $sql = "INSERT INTO Produtos (prdDesNome, prdMnyValor, prdEspDesc, prdImageName, prdDtaCadastro) VALUES (?, ?, ?, ?, SYSDATE())";
@@ -68,7 +68,7 @@ class ProdutoDAO
     {
         $ext = strtolower(substr($produto->prdImage['name'], -4));
         $new_name =  md5(time()) . $ext;
-        $dir = $_SERVER['DOCUMENT_ROOT'] . '/my-app/view/img/produtos/';
+        $dir = $_SERVER['DOCUMENT_ROOT'] . '/view/img/produtos/';
         move_uploaded_file($produto->prdImage['tmp_name'], $dir . $new_name);
 
         $sql = "UPDATE Produtos SET prdDesNome= ?, prdMnyValor= ?, 

@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/model/Produto.class.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/com/model/Produto.class.php';
 
 class MainService
 {
