@@ -6,10 +6,6 @@ error_reporting(E_ALL);
 include_once $_SERVER['DOCUMENT_ROOT'] . '/com/controller/LoginController.class.php';
 session_start();
 
-if (isset($_POST['login'])) {
-  $_SESSION['login'] = $_POST['login'];
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -85,13 +81,13 @@ if (isset($_POST['login'])) {
               alert("Senha ou login não encontrados.");
             } else {
               alert("Login realizado com sucesso.");
-              $.ajax({
-                data: {
-                  "login": response.return['usnDesNome']
-                },
-                url: 'usnDesNome.php',
-                type: 'POST'
-              });
+              // $.ajax({
+              //   data: {
+              //     "login": response.return['usnDesNome']
+              //   },
+              //   url: 'usnDesNome.php',
+              //   type: 'POST'
+              // });
               window.location.href = "painelListagem.php";
             }
           }
