@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/com/controller/PainelController.class.php';
+include_once('com/controller/PainelController.class.php');
 ?>
 
 <header>

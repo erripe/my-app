@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/com/service/LoginService.class.php';
+include('com/service/LoginService.class.php');
 
 if (isset($_POST['action'])) {
 

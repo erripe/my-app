@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/com/model/dao/UsuarioDAO.class.php';
+include('com/model/dao/UsuarioDAO.class.php');
 
 class Usuario
 {
