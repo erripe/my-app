@@ -47,7 +47,11 @@ class LoginController
     public function login($usuario)
     {
         $service = new LoginService();
-        return $service->login($usuario);
+        $logado = $service->login($usuario);
+        if ($logado) {
+            $_SESSION['login'] = $logado;
+        }
+        return $logado;
     }
 
     public function findById($pesCod)

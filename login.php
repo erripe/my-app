@@ -6,6 +6,10 @@ error_reporting(E_ALL);
 include_once $_SERVER['DOCUMENT_ROOT'] . '/com/controller/LoginController.class.php';
 session_start();
 
+if (isset($_POST['login'])) {
+  $_SESSION['login'] = $_POST['login'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -85,7 +89,7 @@ session_start();
                 data: {
                   "login": response.return['usnDesNome']
                 },
-                url: 'painelListagem.php',
+                url: 'usnDesNome.php',
                 type: 'POST'
               });
               window.location.href = "painelListagem.php";
@@ -95,11 +99,7 @@ session_start();
       })
     );
   </script>
-  <?php
-  if (isset($_POST['login'])) {
-    $_SESSION['login'] = $_POST['login'];
-  }
-  ?>
+
 </body>
 
 </html>
