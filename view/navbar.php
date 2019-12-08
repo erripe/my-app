@@ -4,7 +4,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/PainelControlle
 
 <header>
     <nav class="navbar navbar-expand-md navbar-blue fixed-top bg-light">
-        <a class="navbar-brand" href="index.php">Loss</a>
+        <a class="navbar-brand" href="/my-app/index.php">Loss</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -13,14 +13,14 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/PainelControlle
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="view/catalogo.php">Produtos</a>
+                        <a class="dropdown-item" href="/my-app/view/catalogo.php">Produtos</a>
                     </div>
                 </li>
             </ul>
             <form action="/my-app/view/catalogo.php" class="form-inline mt-2 mt-md-0">
                 <input name="prdDesNome" id="procurar" class="procurar form-control mr-sm-2" type="text" placeholder="Procurar" aria-label="Procurar">
             </form>
-            <a href="view/painelListagem.php">
+            <a href="/my-app/view/painelListagem.php">
                 <svg class="icons" xmlns="http://www.w3.org/2000/svg" width="24" ; height="24" viewBox="0 0 14 16">
                     <path fill-rule="evenodd" d="M14 8.77v-1.6l-1.94-.64-.45-1.09.88-1.84-1.13-1.13-1.81.91-1.09-.45-.69-1.92h-1.6l-.63 1.94-1.11.45-1.84-.88-1.13 1.13.91 1.81-.45 1.09L0 7.23v1.59l1.94.64.45 1.09-.88 1.84 1.13 1.13 1.81-.91 1.09.45.69 1.92h1.59l.63-1.94 1.11-.45 1.84.88 1.13-1.13-.92-1.81.47-1.09L14 8.75v.02zM7 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" />
                 </svg>

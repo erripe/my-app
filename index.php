@@ -8,7 +8,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/my-app/com/controller/MainController.class
 <html lang="en">
 
 <head>
-  <base href="http://localhost/my-app/" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">

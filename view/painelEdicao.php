@@ -13,7 +13,6 @@ if (isset($_GET['prdCod'])) {
 <html lang="en">
 
 <head>
-  <base href="http://localhost/my-app/" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -25,8 +24,8 @@ if (isset($_GET['prdCod'])) {
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Custom styles for this template -->
-  <link rel="stylesheet" href="view/css/dashboard.css">
-  <link rel="stylesheet" href="view/css/main.css">
+  <link rel="stylesheet" href="/my-app/view/css/dashboard.css">
+  <link rel="stylesheet" href="/my-app/view/css/main.css">
 
 </head>
 
