@@ -10,7 +10,7 @@ class Database
 
     public function __construct()
     {
-        $this->servidor = "teste.com.zz";
+        $this->servidor = "localhost";
         $this->usuario = "root";
         $this->senha = "";
         $this->banco = "ReloLoss";

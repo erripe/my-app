@@ -30,7 +30,7 @@ if (!isset($_SESSION["login"])) {
 
 <body>
   <!-- NavBar -->
-  <?php include_once "navbar.php"; ?>
+  <?php include_once("/my-app/view/navbar.php"); ?>
   <div class="container-fluid">
     <div class="row">
       <?php include_once "painelLateral.php"; ?>

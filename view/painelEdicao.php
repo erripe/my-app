@@ -31,10 +31,10 @@ if (isset($_GET['prdCod'])) {
 
 <body>
   <!-- NavBar -->
-  <?php include_once("navbar.php"); ?>
+  <?php include_once("/my-app/view/navbar.php"); ?>
   <div class="container-fluid">
     <div class="row">
-      <?php include_once("painelLateral.php"); ?>
+      <?php include_once("/my-app/view/painelLateral.php"); ?>
 
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
